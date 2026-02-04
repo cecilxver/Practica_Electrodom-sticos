@@ -8,10 +8,11 @@ public class Television extends Electrodomestico{
     @Override
     public double calcularConsumo() {
         double consumo;
-        if(isEncendido()){
-            consumo=0;
-        } else if (pulgadas>40) {
+        if(pulgadas>40){
             consumo=getConsumoBase()*1.3;
+
+        } else if (isEncendido()==false) {
+            consumo=0.0;
         }else {
             consumo=getConsumoBase();
 

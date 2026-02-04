@@ -6,5 +6,9 @@ Hisense.calcularConsumo();
 Television Samsung= new Television("Samsung", "A-1232", 15.0,50);
 Samsung.encender();
 Samsung.calcularConsumo();
+AireAcondicionado Xiaomi= new AireAcondicionado("Samsung", "Ak-47", 23.5,20);
+Xiaomi.encender();
+Xiaomi.calcularConsumo();
+
     }
 }
