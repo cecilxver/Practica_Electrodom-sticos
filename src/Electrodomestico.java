@@ -2,11 +2,13 @@ public abstract class  Electrodomestico {
  private final String marca;
  private final String modelo;
 private final double consumoBase;
+private String NumeroSerie="0";
 private boolean encendido=false;
-Electrodomestico(String marca, String modelo, double consumoBase){
+Electrodomestico(String marca, String modelo, double consumoBase, String NumeroSerie ){
     this.marca=marca;
     this.modelo =modelo;
     this.consumoBase=consumoBase;
+    this.NumeroSerie=NumeroSerie;
 }
 
     /**
@@ -27,7 +29,7 @@ Electrodomestico(String marca, String modelo, double consumoBase){
 
     /**
      * Apaga
-     * @return
+     *
      */
     public boolean apagar(){
     return encendido=false;
@@ -35,10 +37,13 @@ Electrodomestico(String marca, String modelo, double consumoBase){
 
     /**
      * Muestra el consumo base
-     * @return
      */
     public double getConsumoBase() {
         return consumoBase;
+    }
+
+    public String getNumeroSerie() {
+        return NumeroSerie;
     }
 
     public String getMarca() {
@@ -56,8 +61,23 @@ Electrodomestico(String marca, String modelo, double consumoBase){
     public abstract double calcularConsumo();
 
 
+    /**
+     * Devuelve información del electrodoméstico
+     * @return
+     */
     public String toString() {
         String info="Marca: "+marca+" Modelo: "+modelo+" Consumo base: "+consumoBase+" Encendido: "+encendido;
 return info;
     }
+
+    /**
+     * EXTRA: Devuelve la marca y al modelo
+     */
+    public final String getIdentificador(){
+        String info="Marca: "+marca+"\nModelo: "+modelo;
+        return info;
+    }
+    //El error que sale es:
+    // 'getIdentificador()' cannot override 'getIdentificador()' in 'Electrodomestico'; overridden method is final
+
 }

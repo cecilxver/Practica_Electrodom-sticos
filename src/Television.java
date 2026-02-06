@@ -1,10 +1,13 @@
 public class Television extends Electrodomestico{
     private int pulgadas;
-    Television(String marca, String modelo, double consumoBase,int pulgadas){
+    Television(String marca, String modelo, double consumoBase,int pulgadas, String NumeroSerie){
         this.pulgadas=pulgadas;
-        super(marca,modelo,consumoBase);
+        super(marca,modelo,consumoBase, NumeroSerie);
     }
 
+    /**
+     * Calcula el consumo
+     */
     @Override
     public double calcularConsumo() {
         double consumo;

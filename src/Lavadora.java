@@ -1,10 +1,13 @@
 public class Lavadora extends Electrodomestico {
     private int cargaKg;
-    Lavadora(String marca, String modelo, double consumoBase,int cargaKg){
+    Lavadora(String marca, String modelo, double consumoBase,int cargaKg, String NumeroSerie){
         this.cargaKg=cargaKg;
-        super(marca,modelo,consumoBase);
+        super(marca,modelo,consumoBase, NumeroSerie);
     }
 
+    /**
+     * Calcula el consumo
+     */
     public double calcularConsumo() {
         double consumo;
         if (isEncendido()){
